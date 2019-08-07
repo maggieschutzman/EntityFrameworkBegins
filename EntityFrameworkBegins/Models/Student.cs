@@ -17,6 +17,12 @@ namespace EntityFrameworkBegins.Models {
         public double GPA { get; set; }
         public bool IsFulltime { get; set; } = true;
 
+        public int? MajorId { get; set; }
+        public virtual Major Major { get; set; }
+
+        public override string ToString() {
+            return $"{this.Id}, Name[{this.Firstname} {this.Lastname}] {this.Major}";
+        }
         public Student() {
 
 

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace EntityFrameworkBegins.Models {
-    class Major {
+    public class Major {
         [Key]
         public int Id { get; set; }
         [Required]
@@ -15,6 +15,10 @@ namespace EntityFrameworkBegins.Models {
 
         public Major() {
 
+        }
+
+        public override string ToString() {
+            return $"Id: {this.Id}, Desc: {this.Description}, MinSat: {this.MinSat}";
         }
     }
 }
