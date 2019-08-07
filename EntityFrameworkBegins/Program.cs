@@ -7,6 +7,10 @@ namespace EntityFrameworkBegins {
         static void Main(string[] args) {
 
             var context = new AppDbContext();
+            foreach (var major in context.majors.ToList()) {
+                Console.WriteLine($"Id: {major.Id}, Desc: {major.Description}, MinSat: {major.MinSat}");
+            }
+
 
             //var students = context.students                
             //    .Where(s => s.GPA >= 3.0)

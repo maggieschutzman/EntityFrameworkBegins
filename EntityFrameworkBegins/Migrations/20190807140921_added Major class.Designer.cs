@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityFrameworkBegins.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190806185049_set range on sat")]
-    partial class setrangeonsat
+    [Migration("20190807140921_added Major class")]
+    partial class addedMajorclass
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,6 +19,23 @@ namespace EntityFrameworkBegins.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("EntityFrameworkBegins.Models.Major", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<int>("MinSat");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("majors");
+                });
 
             modelBuilder.Entity("EntityFrameworkBegins.Models.Student", b =>
                 {

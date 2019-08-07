@@ -13,6 +13,7 @@ namespace EntityFrameworkBegins.Models {
             builder.UseSqlServer(connStr);
         }
         public DbSet<Student> students { get; set; }
+        public DbSet<Major> majors { get; set; }
 
     }
 }

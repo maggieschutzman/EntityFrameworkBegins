@@ -18,6 +18,23 @@ namespace EntityFrameworkBegins.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("EntityFrameworkBegins.Models.Major", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<int>("MinSat");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("majors");
+                });
+
             modelBuilder.Entity("EntityFrameworkBegins.Models.Student", b =>
                 {
                     b.Property<int>("Id")
