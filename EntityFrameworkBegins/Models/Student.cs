@@ -5,6 +5,7 @@ using System.Text;
 
 namespace EntityFrameworkBegins.Models {
     public class Student {
+
         public int Id { get; set; }
         [Required]
         [StringLength(30)]
@@ -16,7 +17,6 @@ namespace EntityFrameworkBegins.Models {
         public int SAT { get; set; }
         public double GPA { get; set; }
         public bool IsFulltime { get; set; } = true;
-
         public int? MajorId { get; set; }
         public virtual Major Major { get; set; }
 

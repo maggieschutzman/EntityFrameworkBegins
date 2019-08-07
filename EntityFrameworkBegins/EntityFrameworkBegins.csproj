@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20190806183449_initilaization.cs" />
     <Compile Remove="Migrations\20190806183449_initilaization.Designer.cs" />
+    <Compile Remove="Migrations\20190807185614_Updates.cs" />
+    <Compile Remove="Migrations\20190807185614_Updates.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
