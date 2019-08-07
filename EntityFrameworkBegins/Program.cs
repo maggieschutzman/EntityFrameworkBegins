@@ -16,14 +16,18 @@ namespace EntityFrameworkBegins {
             //var students = context.students
             //    .OrderBy(s => s.Firstname)
             //    .ToArray();
+            var students = context.students
+                .OrderBy(s => s.Lastname)
+                .ToArray();
+          
 
             var studentAverageSat = context.students
                 .Average(s => s.SAT);
             Console.WriteLine($"The average sat score is {studentAverageSat}");
 
-            //foreach (var student in students) {
-            //    Console.WriteLine($"{student.Firstname} {student.Lastname}");
-            //}
+            foreach (var student in students) {
+                Console.WriteLine($"{student.Firstname} {student.Lastname}");
+            }
         }
     }
 }
