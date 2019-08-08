@@ -5,9 +5,27 @@ using System.Linq;
 
 namespace EntityFrameworkBegins {
     class Program {
-        static void Main(string[] args) {  
+        static void Main(string[] args) {
+            ScheduleInit();
+        }
 
+        static void ScheduleInit() {
             var context = new AppDbContext();
+            var student = context.students.SingleOrDefault(s => s.Lastname == "Zumwalde");
+            var courses = context.course.Where(c => c.Name.Contains("101")).ToArray();
+            foreach (var c in courses) {
+                var schedule = new Schedule {
+                    StudentId = student.Id,
+                    CourseId = c.Id,
+                    Grade = -1
+                };
+                context.schedule.Add(schedule);
+            }
+        }
+    }
+}
+ 
+
 
             //var mathMajor = context.majors.SingleOrDefault(m => m.Description.Contains("Math"));
             //var math101 = new Course {
@@ -129,37 +147,31 @@ namespace EntityFrameworkBegins {
             //context.courses.Add(socio103);
             //context.SaveChanges();
 
-            var biomjr = context.majors.SingleOrDefault(b => b.Description.Contains("Biology"));
-            var bio101 = new Course {
-                Name = "Biology 101",
-                Instructor = "Zach Zumdy",
-                Credits = 4,
-                MajorId = biomjr.Id
-            };
-            context.courses.Add(bio101);
-            var bio102 = new Course {
-                Name = "Biology 102",
-                Instructor = "Zach Tak",
-                Credits = 5,
-                MajorId = biomjr.Id
-            };
-            context.courses.Add(bio102);
-            var bio103 = new Course {
-                Name = "Biology 103",
-                Instructor = "Bob Ross",
-                Credits = 5,
-                MajorId = biomjr.Id
-            };
-            context.Add(bio103);
-            context.SaveChanges(); 
+            //var biomjr = context.majors.SingleOrDefault(b => b.Description.Contains("Biology"));
+            //var bio101 = new Course {
+            //    Name = "Biology 101",
+            //    Instructor = "Zach Zumdy",
+            //    Credits = 4,
+            //    MajorId = biomjr.Id
+            //};
+            //context.courses.Add(bio101);
+            //var bio102 = new Course {
+            //    Name = "Biology 102",
+            //    Instructor = "Zach Tak",
+            //    Credits = 5,
+            //    MajorId = biomjr.Id
+            //};
+            //context.courses.Add(bio102);
+            //var bio103 = new Course {
+            //    Name = "Biology 103",
+            //    Instructor = "Bob Ross",
+            //    Credits = 5,
+            //    MajorId = biomjr.Id
+            //};
+            //context.Add(bio103);
+            //context.SaveChanges(); 
 
-        }
-
-
-        }
-
-
-                       
+     
             //var major = context.majors.Find(5);
             //context.Remove(major);
 
@@ -225,7 +237,7 @@ namespace EntityFrameworkBegins {
         //    context.majors.Add(major);
         //    context.SaveChanges();
 
-        }
+        
 
 
         //Change Mathematics to Math

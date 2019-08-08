@@ -15,7 +15,10 @@ namespace EntityFrameworkBegins.Models {
         }
         public DbSet<Student> students { get; set; }
         public DbSet<Major> majors { get; set; }
-        public DbSet<Course> courses { get; set; }
+        public DbSet<Course> course { get; set; }
+        public DbSet<Schedule> schedule { get; set; }
+
+        
 
     }
 }
