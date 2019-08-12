@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkBegins", "EntityFrameworkBegins\EntityFrameworkBegins.csproj", "{C712BCEC-2391-439D-9459-5601D98A462A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkBegins", "EntityFrameworkBegins\EntityFrameworkBegins.csproj", "{C712BCEC-2391-439D-9459-5601D98A462A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEducationProject", "TestEducationProject\TestEducationProject.csproj", "{556A225A-49EE-428E-A3DA-5BC805160AB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C712BCEC-2391-439D-9459-5601D98A462A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C712BCEC-2391-439D-9459-5601D98A462A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C712BCEC-2391-439D-9459-5601D98A462A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556A225A-49EE-428E-A3DA-5BC805160AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556A225A-49EE-428E-A3DA-5BC805160AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556A225A-49EE-428E-A3DA-5BC805160AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556A225A-49EE-428E-A3DA-5BC805160AB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

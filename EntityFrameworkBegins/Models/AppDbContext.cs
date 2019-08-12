@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace EntityFrameworkBegins.Models {
-    class AppDbContext : DbContext {
-
+    public class AppDbContext : DbContext {
+        AppDbContext context = null;
         public AppDbContext() : base() { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder) {

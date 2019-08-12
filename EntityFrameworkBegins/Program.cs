@@ -2,29 +2,48 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace EntityFrameworkBegins {
-    class Program {
-        static void Main(string[] args) {
-            ScheduleInit();
+    public class Program {
+        public static void Main(string[] args) { }
+
+            //ScheduleInit();
+
+        public static Student GetStudentByLastname(string lastname) {
+                var db = new AppDbContext();
+                var people = db.students.Where(s => s.Lastname.Equals(lastname)).ToArray();
+            if (people.Count() == 0) {
+                return null;
+            }
+            else {
+                return people[0];
+            }
         }
 
-        static void ScheduleInit() {
-            var context = new AppDbContext();
-            var student = context.students.SingleOrDefault(s => s.Lastname == "Zumwalde");
-            var courses = context.course.Where(c => c.Name.Contains("101")).ToArray();
-            foreach (var c in courses) {
-                var schedule = new Schedule {
-                    StudentId = student.Id,
-                    CourseId = c.Id,
-                    Grade = -1
-                };
-                context.schedule.Add(schedule);
+            public static Student GetStudentById(int id) {
+                var db = new AppDbContext();
+                return db.students.Find(id);
+            }
+
+            public static void ScheduleInit() {
+                //create instance of the context
+                var context = new AppDbContext();
+                //get the student
+                var student = context.students.SingleOrDefault(s => s.Lastname == "Zumwalde");
+                //get the course
+                var courses = context.course.Where(c => c.Name.Contains("101")).ToArray();
+                foreach (var c in courses) {
+                    var schedule = new Schedule {
+                        StudentId = student.Id,
+                        CourseId = c.Id,
+                        Grade = -1
+                    };
+                    context.schedule.Add(schedule);
+                }
             }
         }
     }
-}
- 
 
 
             //var mathMajor = context.majors.SingleOrDefault(m => m.Description.Contains("Math"));
